@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paana Service - Your Trusted Service Provider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #FFC107;
+            --secondary: #FF5722;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a1a;
+        }
+
+        .neo-box {
+            background: #242424;
+            box-shadow: 5px 5px 10px #151515,
+                       -5px -5px 10px #333333;
+            border-radius: 15px;
+        }
+
+        .neo-button {
+            background: linear-gradient(145deg, #1e1e1e, #242424);
+            box-shadow: 5px 5px 10px #151515,
+                       -5px -5px 10px #333333;
+            transition: all 0.3s ease;
+        }
+
+        .neo-button:hover {
+            box-shadow: inset 5px 5px 10px #151515,
+                       inset -5px -5px 10px #333333;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+    <!-- Navigation -->
+    <nav class="neo-box p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-yellow-500">Paana Service</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-yellow-500">Profile</a>
+                <a href="#services" class="hover:text-yellow-500">Services</a>
+                <a href="#" class="hover:text-yellow-500">Order History</a>
+                <a href="#" class="hover:text-yellow-500">Support</a>
+                <a href="#" class="hover:text-yellow-500">Logout</a>
+            </div>
+            <button class="md:hidden" onclick="toggleMenu()">
+                <i class="bi bi-list text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed top-16 right-0 w-full bg-gray-900 hidden z-40">
+        <div class="p-4 space-y-4">
+            <a href="#" class="block hover:text-yellow-500">Profile</a>
+            <a href="#services" class="block hover:text-yellow-500">Services</a>
+            <a href="#" class="block hover:text-yellow-500">Order History</a>
+            <a href="#" class="block hover:text-yellow-500">Support</a>
+            <a href="#" class="block hover:text-yellow-500">Logout</a>
+        </div>
+    </div>
+
+    <!-- Hero Section with Slider -->
+    <div class="swiper mySwiper mt-16">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Service 1">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Professional Services at Your Doorstep</h1>
+                        <p class="text-xl text-gray-200">Trusted experts for all your needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e" alt="Service 2">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <div class="text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Quality Service Guaranteed</h1>
+                        <p class="text-xl text-gray-200">100% satisfaction or money back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-yellow-500">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Service Cards will be dynamically generated -->
+        </div>
+    </section>
+
+    <!-- Promotion Section -->
+    <section class="container mx-auto py-16 px-4">
+        <div class="neo-box p-8">
+            <h2 class="text-3xl font-bold text-center mb-8 text-yellow-500">Special Offers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neo-box p-6">
+                    <h3 class="text-xl font-bold mb-4">First Time Users</h3>
+                    <p class="mb-4">Get 20% off on your first booking!</p>
+                    <button class="neo-button px-6 py-2 text-yellow-500">Claim Now</button>
+                </div>
+                <div class="neo-box p-6">
+                    <h3 class="text-xl font-bold mb-4">Weekend Special</h3>
+                    <p class="mb-4">Free inspection on all repairs</p>
+                    <button class="neo-button px-6 py-2 text-yellow-500">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Now Button -->
+    <button onclick="openBookingModal()" class="fixed bottom-8 right-8 neo-button px-6 py-3 rounded-full text-yellow-500 font-bold z-50">
+        Book Now
+    </button>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal fixed inset-0 hidden flex items-center justify-center z-50">
+        <div class="neo-box p-8 w-full max-w-md mx-4">
+            <h3 class="text-2xl font-bold mb-6 text-yellow-500">Book a Service</h3>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block mb-2">Select Service</label>
+                    <select id="serviceSelect" class="w-full p-2 rounded bg-gray-800 text-white">
+                        <!-- Options will be dynamically populated -->
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2">Location</label>
+                    <input type="text" class="w-full p-2 rounded bg-gray-800 text-white" placeholder="Enter your location">
+                </div>
+                <div>
+                    <label class="block mb-2">Requirements</label>
+                    <textarea class="w-full p-2 rounded bg-gray-800 text-white" rows="3" placeholder="Describe your requirements"></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" onclick="closeBookingModal()" class="neo-button px-6 py-2 text-gray-400">Cancel</button>
+                    <button type="submit" class="neo-button px-6 py-2 text-yellow-500">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Services Data
+        const services = [
+            "Plumber", "Electrician", "Carpenter", "Motor Bike Mechanic", "Car Mechanic",
+            "Car Wash", "AC Technician", "Refrigerator Technician", "TV Repair", "Wifi Connection",
+            "Washing Machine Technician", "Tiles & Marble Work", "Decorators", "CCTV Installation & Repair",
+            "Fabrication Work", "Bridal Mehandi", "Home Salon", "Computer Technician", "Painter",
+            "Makeup Artist", "Driver", "Pick & Drop Service", "Private Tutor", "Placement Services"
+        ];
+
+        // Initialize Swiper
+        new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+            },
+            loop: true,
+        });
+
+        // Generate Service Cards
+        const servicesContainer = document.querySelector('#services .grid');
+        services.forEach(service => {
+            const card = document.createElement('div');
+            card.className = 'service-card neo-box p-6 text-center';
+            card.innerHTML = `
+                <i class="bi bi-tools text-4xl text-yellow-500 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">${service}</h3>
+                <button onclick="openBookingModal('${service}')" class="neo-button px-4 py-2 text-yellow-500 mt-4">Book Now</button>
+            `;
+            servicesContainer.appendChild(card);
+        });
+
+        // Populate Service Select
+        const serviceSelect = document.getElementById('serviceSelect');
+        services.forEach(service => {
+            const option = document.createElement('option');
+            option.value = service;
+            option.textContent = service;
+            serviceSelect.appendChild(option);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Booking Modal
+        function openBookingModal(service = '') {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            if (service) {
+                serviceSelect.value = service;
+            }
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('hidden');
+        }
+
+        // Booking Form Submit
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Booking submitted successfully!');
+            closeBookingModal();
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        }
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
